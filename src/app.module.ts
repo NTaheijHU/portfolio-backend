@@ -3,6 +3,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProjectModule } from './project/project.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { ReviewModule } from './review/review.module';
 
 const MONGO_URI =
   'mongodb+srv://portfolio:zNlNRKMEuMwNBuAG@portfolio.hk5ii.mongodb.net/';
@@ -10,6 +11,7 @@ const MONGO_URI =
 @Module({
   imports: [
     ProjectModule,
+    ReviewModule,
     MongooseModule.forRoot(MONGO_URI + 'general', {
       connectionName: 'general',
       useNewUrlParser: true,
