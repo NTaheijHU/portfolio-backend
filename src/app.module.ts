@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/no-var-requires */
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -7,8 +9,10 @@ import { ReviewModule } from './review/review.module';
 import { SkillModule } from './skill/skill.module';
 import { AboutModule } from './about/about.module';
 
-const MONGO_URI =
-  'mongodb+srv://portfolio:zNlNRKMEuMwNBuAG@portfolio.hk5ii.mongodb.net/';
+require('dotenv').config();
+
+const MONGO_URI = process.env.MONGO_URI;
+
 
 @Module({
   imports: [
