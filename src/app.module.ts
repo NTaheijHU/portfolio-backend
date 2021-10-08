@@ -4,20 +4,23 @@ import { AppService } from './app.service';
 import { ProjectModule } from './project/project.module';
 import { MongooseModule } from '@nestjs/mongoose';
 
+const MONGO_URI =
+  'mongodb+srv://portfolio:zNlNRKMEuMwNBuAG@portfolio.hk5ii.mongodb.net/';
+
 @Module({
   imports: [
     ProjectModule,
-    MongooseModule.forRoot(process.env.MONGO_URI + 'general', {
+    MongooseModule.forRoot(MONGO_URI + 'general', {
       connectionName: 'general',
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
-    MongooseModule.forRoot(process.env.MONGO_URI + 'projects', {
+    MongooseModule.forRoot(MONGO_URI + 'projects', {
       connectionName: 'projects',
       useNewUrlParser: true,
       useUnifiedTopology: true,
     }),
-    MongooseModule.forRoot(process.env.MONGO_URI + 'reviews', {
+    MongooseModule.forRoot(MONGO_URI + 'reviews', {
       connectionName: 'reviews',
       useNewUrlParser: true,
       useUnifiedTopology: true,
