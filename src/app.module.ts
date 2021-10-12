@@ -8,18 +8,19 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { ReviewModule } from './review/review.module';
 import { SkillModule } from './skill/skill.module';
 import { AboutModule } from './about/about.module';
+import { MailModule } from './mail/mail.module';
+import { MailController } from './mail/mail.controller';
 
 require('dotenv').config();
 
 const MONGO_URI = process.env.MONGO_URI;
-
-
 @Module({
   imports: [
     ProjectModule,
     ReviewModule,
     SkillModule,
     AboutModule,
+    MailModule,
     MongooseModule.forRoot(MONGO_URI + 'general', {
       connectionName: 'general',
       useNewUrlParser: true,
@@ -36,7 +37,7 @@ const MONGO_URI = process.env.MONGO_URI;
       useUnifiedTopology: true,
     }),
   ],
-  controllers: [AppController],
+  controllers: [AppController, MailController],
   providers: [AppService],
 })
 export class AppModule {}
