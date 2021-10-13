@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Controller, Get } from '@nestjs/common';
 import { AboutService } from './about.service';
 
@@ -7,6 +8,6 @@ export class AboutController {
 
   @Get()
   async index() {
-    return await this.service.findOne();
+    return await this.service.findAll();
   }
 }

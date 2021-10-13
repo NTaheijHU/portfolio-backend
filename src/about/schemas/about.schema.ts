@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable @typescript-eslint/ban-types */
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 export type AboutDocument = About & Document;
@@ -20,13 +21,17 @@ export class About {
   @Prop({ required: true })
   aboutTextLong: string;
 
-  // @Prop({ required: true })
-  // projects: string;
+  @Prop({ required: true })
+  githubLink: string;
 
-  // { title: string, image: string, details: string, githubLink: string }
+  @Prop({ required: true })
+  projectsImage: string;
 
-  // @Prop({ required: true })
-  // contact: { phone: string, email: string, socials: { name: string, link: string }[] };
+  @Prop({ required: true })
+  projectsText: string;
+
+  @Prop({ required: true })
+  projectsTitle: string;
 }
 
 export const AboutSchema = SchemaFactory.createForClass(About);
