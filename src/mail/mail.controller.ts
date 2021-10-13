@@ -26,7 +26,7 @@ export class MailController {
         });
       } else {
         return res.status(HttpStatus.FORBIDDEN).json({
-          message: 'Invalid captcha',
+          message: 'Invalid captcha.',
         });
       }
     })

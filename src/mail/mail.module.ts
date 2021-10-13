@@ -24,7 +24,7 @@ const MAIL_PW = process.env.MAIL_PW;
         },
       },
       defaults: {
-        from: '"No Reply" <info@ntaheij.dev>',
+        from: '"Contact Form" <contact@noahtaheij.nl>',
       },
       template: {
         dir: join(__dirname, 'templates'),
