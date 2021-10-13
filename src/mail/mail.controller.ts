@@ -18,18 +18,23 @@ export class MailController {
     const token = body.token;
 
     await verify(secret, token)
-    .then(async (data) => {
-      if (data.success === true) {
-        await this.service.sendMail(body.email, body.name, body.phone, body.message);
-        return res.status(HttpStatus.CREATED).json({
-          message: 'Het bericht is verstuurd.',
-        });
-      } else {
-        return res.status(HttpStatus.FORBIDDEN).json({
-          message: 'Invalid captcha.',
-        });
-      }
-    })
-    .catch(console.error);
+      .then(async (data) => {
+        if (data.success === true) {
+          await this.service.sendMail(
+            body.email,
+            body.name,
+            body.phone,
+            body.message,
+          );
+          return res.status(HttpStatus.CREATED).json({
+            message: 'Het bericht is verstuurd.',
+          });
+        } else {
+          return res.status(HttpStatus.FORBIDDEN).json({
+            message: 'Invalid captcha.',
+          });
+        }
+      })
+      .catch(console.error);
   }
 }

@@ -36,7 +36,7 @@ export class Skill {
   skills: string[];
 
   @Prop({ required: true })
-  images: { text: string, link: string }[];
+  images: { text: string; link: string }[];
 }
 
 export const SkillSchema = SchemaFactory.createForClass(Skill);

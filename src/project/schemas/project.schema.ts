@@ -36,7 +36,7 @@ export class Project {
   skills: string[];
 
   @Prop({ required: true })
-  images: { text: string, link: string }[];
+  images: { text: string; link: string }[];
 }
 
 export const ProjectSchema = SchemaFactory.createForClass(Project);
