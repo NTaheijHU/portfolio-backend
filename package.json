@@ -16,7 +16,7 @@
     "lint": "eslint \"{src,apps,libs}/**/*.ts\" --fix"
   },
   "dependencies": {
-    "@nestjs-modules/mailer": "^1.6.0",
+    "@nestjs-modules/mailer": "^1.9.1",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/mongoose": "^9.0.0",
@@ -25,7 +25,7 @@
     "handlebars": "^4.7.7",
     "hcaptcha": "^0.1.0",
     "mongoose": "^6.0.9",
-    "nodemailer": "^6.7.0",
+    "nodemailer": "^6.9.9",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
